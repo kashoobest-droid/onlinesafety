@@ -576,6 +576,234 @@
             background-color: var(--dark);
         }
     }
+    /* ====== OPTION 1: Button in Header ====== */
+.header-buttons {
+    margin-top: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(91, 164, 164, 0.15);
+    color: var(--light);
+    padding: 12px 28px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    border: 1px solid rgba(91, 164, 164, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.contact-btn:hover {
+    background: rgba(91, 164, 164, 0.25);
+    transform: translateY(-2px);
+    border-color: rgba(91, 164, 164, 0.5);
+    box-shadow: 0 5px 20px rgba(91, 164, 164, 0.2);
+}
+
+.contact-btn:active {
+    transform: translateY(0);
+}
+
+.contact-btn i {
+    font-size: 1.2rem;
+    color: var(--secondary);
+}
+
+/* ====== OPTION 2: Navigation Button ====== */
+.top-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.contact-btn-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(30, 58, 95, 0.9);
+    color: var(--light);
+    padding: 10px 22px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    border: 1px solid rgba(91, 164, 164, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.contact-btn-nav:hover {
+    background: rgba(74, 111, 165, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 111, 165, 0.3);
+}
+
+/* ====== OPTION 3: Floating Button ====== */
+.floating-contact-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(74, 111, 165, 0.9), rgba(91, 164, 164, 0.9));
+    color: var(--light);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(15, 26, 46, 0.3);
+    transition: var(--transition);
+    z-index: 999;
+    overflow: hidden;
+}
+
+.floating-contact-btn:hover {
+    width: 140px;
+    border-radius: var(--border-radius);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(74, 111, 165, 0.4);
+}
+
+.floating-contact-btn i {
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.floating-contact-btn span {
+    font-size: 0;
+    opacity: 0;
+    transition: var(--transition);
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.floating-contact-btn:hover i {
+    font-size: 1.2rem;
+}
+
+.floating-contact-btn:hover span {
+    font-size: 0.9rem;
+    opacity: 1;
+}
+
+.floating-contact-btn::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.floating-contact-btn:hover::before {
+    transform: translateX(100%);
+}
+
+/* ====== OPTION 4: Footer Contact Section ====== */
+.contact-section {
+    background: rgba(30, 58, 95, 0.3);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    text-align: center;
+    margin: 3rem auto 5rem;
+    max-width: 800px;
+    border: 1px solid rgba(91, 164, 164, 0.2);
+}
+
+.contact-section h3 {
+    color: var(--light);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.contact-section p {
+    color: var(--gray);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.contact-btn-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, rgba(74, 111, 165, 0.9), rgba(91, 164, 164, 0.9));
+    color: var(--light);
+    padding: 16px 40px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    border: none;
+}
+
+.contact-btn-large:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(74, 111, 165, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-buttons {
+        margin-top: 1.5rem;
+    }
+    
+    .contact-btn {
+        padding: 10px 22px;
+        font-size: 1rem;
+    }
+    
+    .contact-btn-nav {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+    
+    .floating-contact-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .floating-contact-btn:hover {
+        width: 120px;
+    }
+    
+    .contact-section {
+        padding: 2rem 1.5rem;
+        margin: 2rem auto 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-btn-large {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+    
+    .top-nav {
+        padding: 15px;
+    }
+    
+    .floating-contact-btn {
+        bottom: 15px;
+        right: 15px;
+    }
+}
 </style>
 </head>
 <body>
@@ -599,9 +827,6 @@
 
     <!-- Main Content -->
     <main class="container">
-        <section class="intro-text">
-            <p>Welcome! This resource is designed to help both young and old navigate online spaces safely while engaging in climate education and activism. Each card below covers an essential topic in simple, friendly language.</p>
-        </section>
 
         <!-- Cards Section -->
         <section class="cards-container" id="topics">
@@ -820,5 +1045,12 @@
         header.style.backgroundPositionY = scrolled * 0.5 + 'px';
     });
 </script>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSenQiv66TZSTxpB_u1tRo1Sdk5wGs9GkokN1Fx16dDzWivSIg/viewform?usp=dialog" 
+   target="_blank" 
+   class="floating-contact-btn" 
+   title="Contact Us">
+    <i class="fas fa-headset"></i>
+    <span>Contact</span>
+</a>
 </body>
 </html>
